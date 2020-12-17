@@ -1,6 +1,13 @@
 # npm-packages-size
 A quick way to measure the install size of npm packages.
 
+#### Result example
+
+```json
+        express         1.6 MB
+  graphql-react         444.7 KB
+ @apollo/client         3.8 MB
+```
 ## Setup
 
 To install from [npm](https://npmjs.com) run:

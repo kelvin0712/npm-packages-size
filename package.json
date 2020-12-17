@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-size",
+  "name": "npm-packages-size",
   "version": "1.0.0",
   "description": "Quickly measure the install size of npm packages.",
   "main": "src/index.js",
@@ -10,6 +10,8 @@
   "keywords": [
     "npm-packages-size",
     "packages-size",
+    "size",
+    "package",
     "js",
     "npm"
   ],

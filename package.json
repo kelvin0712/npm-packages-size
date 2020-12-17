@@ -1,0 +1,26 @@
+{
+  "name": "npm-package-size",
+  "version": "1.0.0",
+  "description": "Quickly measure the install size of npm packages.",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "packages-size": "node src/index.js"
+  },
+  "keywords": [
+    "npm-packages-size",
+    "packages-size",
+    "js",
+    "npm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelvin0712/npm-package-size.git"
+  },
+  "author": "Kelvin Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kelvin0712/npm-package-size/issues"
+  },
+  "homepage": "https://github.com/kelvin0712/npm-package-size#readme"
+}

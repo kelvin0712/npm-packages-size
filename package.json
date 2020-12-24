@@ -2,10 +2,27 @@
   "name": "npm-packages-size",
   "version": "1.0.2",
   "description": "Quickly measure the install size of npm packages.",
-  "main": "src/index.js",
-  "bin": "src/index.js",
+  "license": "MIT",
+  "author": "Kelvin Nguyen",
+  "main": "public",
+  "bin": "cli/npm-packages-size.js",
+  "files": [
+    "cli",
+    "private",
+    "public"
+  ],
+  "exports": {
+    ".": {
+      "require": "./public/index.js"
+    },
+    "./public/": "./public/",
+    "./package": "./package.json",
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "packages-size": "node src/index.js"
+    "packages-size": "node cli/npm-packages-size.js",
+    "test:eslint": "eslint .",
+    "test:prettier": "prettier -c ."
   },
   "keywords": [
     "npm-packages-size",
@@ -15,14 +32,25 @@
     "js",
     "npm"
   ],
+  "engines": {
+    "node": "^10.17.0 || ^12.0.0 || >= 13.7.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kelvin0712/npm-package-size.git"
+    "url": "git+https://github.com/kelvin0712/npm-packages-size.git"
   },
-  "author": "Kelvin Nguyen",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kelvin0712/npm-package-size/issues"
-  },
-  "homepage": "https://github.com/kelvin0712/npm-package-size#readme"
+  "bugs": "https://github.com/kelvin0712/npm-packages-size/issues",
+  "homepage": "https://github.com/kelvin0712/npm-packages-size#readme",
+  "devDependencies": {
+    "coverage-node": "^4.0.0",
+    "eslint": "^7.16.0",
+    "eslint-config-env": "^15.0.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^30.7.9",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "prettier": "^2.2.1",
+    "test-director": "^5.0.0"
+  }
 }

@@ -13,7 +13,11 @@ const installPackages = require("../private/installPackages");
  * @returns {object.<string>} Packages names and sizes.
  */
 module.exports = async function npmPackagesSize(dir, packageNames) {
-  installPackages(dir, packageNames);
+  try {
+    await installPackages(dir, packageNames);
+  } catch (err) {
+    throw new TypeError("One of the packages does not exist.");
+  }
 
   const packagesSize = packageNames.reduce(async (acc, curr) => {
     const packageSize = await getFolderSize(
@@ -22,8 +26,8 @@ module.exports = async function npmPackagesSize(dir, packageNames) {
     return [
       ...(await acc),
       {
-        packageName: curr,
-        packageSize,
+        name: curr,
+        size: packageSize,
       },
     ];
   }, []);

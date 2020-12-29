@@ -1,6 +1,6 @@
 {
   "name": "npm-packages-size",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Quickly measure the install size of npm packages.",
   "license": "MIT",
   "author": "Kelvin Nguyen",
@@ -13,6 +13,7 @@
   ],
   "exports": {
     ".": {
+      "import": "./public/index.mjs",
       "require": "./public/index.js"
     },
     "./public/": "./public/",
@@ -21,8 +22,10 @@
   },
   "scripts": {
     "packages-size": "node cli/npm-packages-size.js",
+    "test": "npm run test:eslint && npm run test:prettier && npm run test:api",
     "test:eslint": "eslint .",
-    "test:prettier": "prettier -c ."
+    "test:prettier": "prettier -c .",
+    "test:api": "coverage-node -r ./test/index"
   },
   "keywords": [
     "npm-packages-size",
@@ -52,5 +55,9 @@
     "eslint-plugin-prettier": "^3.3.0",
     "prettier": "^2.2.1",
     "test-director": "^5.0.0"
+  },
+  "dependencies": {
+    "columnify": "^1.5.4",
+    "kleur": "^4.1.3"
   }
 }

@@ -1,4 +1,5 @@
 # npm-packages-size
+
 A quick way to measure the install size of npm packages.
 
 #### Result example
@@ -8,6 +9,7 @@ A quick way to measure the install size of npm packages.
   graphql-react         444.7 KB
  @apollo/client         3.8 MB
 ```
+
 ## Setup
 
 To install from [npm](https://npmjs.com) run:
@@ -32,12 +34,10 @@ Then run the script to get the install size of the packages:
 npm run npm-packages-size <packageName> <packageName>
 ```
 
-## Cli 
+## Cli
 
 - The `npx npm-packages-size` script is handy for finding the install size of packages.
 
 ```sh
 npx npm-packages-size <packageName> <packageName>
 ```
-
-

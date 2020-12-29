@@ -9,17 +9,21 @@ const readFilesInFolder = require("./readFilesInFolder");
  * @kind function
  * @name getTotalSize
  * @param {string} dir A directory to the folder.
- * @returns {Promise<number>} Formatted size of the folder.
+ * @returns {Promise<string>} Formatted size of the folder.
  * @ignore
  */
 module.exports = async function getTotalSize(dir) {
-  const arrayOfFiles = await readFilesInFolder(dir);
-
   let totalSize = 0;
 
-  arrayOfFiles.forEach((file) => {
-    totalSize += fs.statSync(file).size;
-  });
+  try {
+    const arrayOfFiles = await readFilesInFolder(dir);
+
+    arrayOfFiles.forEach((file) => {
+      totalSize += fs.statSync(file).size;
+    });
+  } catch (err) {
+    throw new TypeError(`Cannot read files in ${dir}`);
+  }
 
   return formatBytes(totalSize);
 };

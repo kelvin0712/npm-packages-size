@@ -1,14 +1,13 @@
 # npm-packages-size changelog
 
-## Next
-
-### Major
-
-- Refactor the project.
+## v1.1.0
 
 ### Minor
 
 - Set up eslint and prettier.
+- Refactored the project.
+- Added unit testings.
+- Formated the result.
 
 ### Patch
 

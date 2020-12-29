@@ -11,6 +11,9 @@ const UNITS = ["Bytes", "KB", "MB"];
  * @ignore
  */
 module.exports = function formatBytes(bytes) {
+  if (isNaN(Number(bytes)))
+    throw new TypeError("Please pass a valid number to `formatBytes`.");
+
   const unitIndex = bytes
     ? parseInt(Math.floor(Math.log(bytes) / Math.log(1024)))
     : 0;
